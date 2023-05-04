@@ -7,8 +7,8 @@ export default class Stack<Type> {
         return;
     }
 
-    public pop(): Type | undefined {
-        return this.items.pop();
+    public pop(): Type | null {
+        return this.isEmpty() ? null : this.items.pop()!; 
     }
 
     public peek(item: Type) {
