@@ -1,25 +1,7 @@
-export default class Stack<Type> {
-    private items: Array<Type> = []; 
-    private count: number = 0; 
-
-    public push(item: Type): void {
-        this.count = this.items.push(item);
-        return;
-    }
-
-    public pop(): Type | null {
-        return this.isEmpty() ? null : this.items.pop()!; 
-    }
-
-    public peek(item: Type) {
-        return this.items[this.items.length - 1];
-    }
-
-    public isEmpty(): boolean { 
-        return this.items.length === 0;
-    }
-
-    public size(): number {
-        return this.count;
-    }
+interface IStack<T> {
+    push(item: T): void; 
+    pop(): T | undefined; 
+    peek(): T | undefined;
+    is_empty(): boolean; 
+    size(): number;  
 }
