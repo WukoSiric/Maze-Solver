@@ -6,6 +6,7 @@ export class Stack<T> implements IStack<T> {
         if (this.size() === this.capacity) {
             throw Error("Stack has reached max capacity");
         }
+        this.storage[this.storage.length] = item; 
     }
 
     pop(): T | undefined { 
